@@ -38,6 +38,13 @@ class Checker
      */
     public function isAnagram(string $word, string $comparison) : bool
     {
+        $comparison = str_replace(' ', '', $comparison);
+
+        if (count_chars($word, 1) == count_chars($comparison, 1)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -51,11 +58,20 @@ class Checker
     {
     }
 }
-$word = "anna";
+// $word = "anna";
+// $x = new Checker();
+// if ($x->isPalindrome($word)) {
+//     echo $word ." is a palindrome string";
+// } else {
+//     echo $word ." is not a palindrome string";
+// }
+
+$word = "coalface";
+$comparison = "cacao elf";
 
 $x = new Checker();
-if ($x->isPalindrome($word)) {
-    echo $word ." is a palindrome string";
+if ($x->isAnagram($word, $comparison)) {
+    echo $word . " and " . $comparison . " are anagram";
 } else {
-    echo $word ." is not a palindrome string";
+    echo $word . " and " . $comparison . " are not anagram";
 }
