@@ -2,21 +2,8 @@
 
 namespace App;
 
-/**
- * Pangrams, anagrams and palindromes
- *
- * Implement each of the functions of the Checker class.
- * Aim to spend about 10 minutes on each function.
- */
 class Checker
 {
-    /**
-     * A palindrome is a word, phrase, number, or other sequence of characters
-     * which reads the same backward or forward.
-     *
-     * @param string $word
-     * @return bool
-     */
     public function isPalindrome(string $word) : bool
     {
         $reverseString = strrev($word);
@@ -27,15 +14,6 @@ class Checker
         }
     }
     
-    /**
-     * An anagram is the result of rearranging the letters of a word or phrase
-     * to produce a new word or phrase, using all the original letters
-     * exactly once.
-     *
-     * @param string $word
-     * @param string $comparison
-     * @return bool
-     */
     public function isAnagram(string $word, string $comparison) : bool
     {
         $comparison = str_replace(' ', '', $comparison);
@@ -47,13 +25,6 @@ class Checker
         }
     }
 
-    /**
-     * A Pangram for a given alphabet is a sentence using every letter of the
-     * alphabet at least once.
-     *
-     * @param string $phrase
-     * @return bool
-     */
     public function isPangram(string $phrase) : bool
     {
         $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
@@ -74,23 +45,44 @@ class Checker
         return $result;
     }
 }
-// $word = "anna";
-// $x = new Checker();
-// if ($x->isPalindrome($word)) {
-//     echo $word ." is a palindrome string";
-// } else {
-//     echo $word ." is not a palindrome string";
-// }
+$word = "anna";
+$x = new Checker();
+if ($x->isPalindrome($word)) {
+    echo $word ." is a palindrome string\n";
+} else {
+    echo $word ." is not a palindrome string\n";
+}
 
-// $word = "coalface";
-// $comparison = "cacao elf";
+$word = "Bark";
+$x = new Checker();
+if ($x->isPalindrome($word)) {
+    echo $word ." is a palindrome string\n";
+} else {
+    echo $word ." is not a palindrome string\n";
+}
 
-// $x = new Checker();
-// if ($x->isAnagram($word, $comparison)) {
-//     echo $word . " and " . $comparison . " are anagram";
-// } else {
-//     echo $word . " and " . $comparison . " are not anagram";
-// }
+$word = "coalface";
+$comparison = "cacao elf";
+
+$x = new Checker();
+if ($x->isAnagram($word, $comparison)) {
+    echo $word . " and " . $comparison . " are anagram\n";
+} else {
+    echo $word . " and " . $comparison . " are not anagram\n";
+}
+
+$word = "coalface";
+$comparison = "dark elf";
+
+$x = new Checker();
+if ($x->isAnagram($word, $comparison)) {
+    echo $word . " and " . $comparison . " are anagram\n";
+} else {
+    echo $word . " and " . $comparison . " are not anagram\n";
+}
+$phrase = "The quick brown fox jumps over the lazy dog";
+$x = new Checker();
+
 $phrase = "The quick brown fox jumps over the lazy dog";
 $x = new Checker();
 
